@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sit Up</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/images/logos/favicon.png"
+    />
+    <link rel="stylesheet" href="assets/css/styles.min.css" />
+  </head>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+          <div
+            class="brand-logo d-flex align-items-center justify-content-between"
+          >
+            <a href="./index.html" class="text-nowrap logo-img">
+              <!-- <img src="assets/images/logos/dark-logo.svg" width="180" alt="" /> -->
+              <h1 class="mt-3">Sit Up</h1>
+            </a>
+            <div
+              class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+              id="sidebarCollapse"
+            >
+              <i class="ti ti-x fs-8"></i>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Home</span>
+              </li>
+              <li class="sidebar-item selected">
+                <a
+                  class="sidebar-link"
+                  href="./index.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./camera.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-login"></i>
+                  </span>
+                  <span class="hide-menu">Posture Mirroring</span>
+                </a>
+              </li>
+
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">AUTH</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./login.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-login"></i>
+                  </span>
+                  <span class="hide-menu">Sign Out</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./register.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-user-plus"></i>
+                  </span>
+                  <span class="hide-menu">Register</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <!--  Header Start -->
+        <!-- <header class="app-header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item d-block d-xl-none">
+                <a
+                  class="nav-link sidebartoggler nav-icon-hover"
+                  id="headerCollapse"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti ti-menu-2"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header> -->
+        <!--  Header End -->
+
+        <div class="container-fluid">
+          <!-- <div class=""> -->
+          <h1 id="userName" class="pb-2">Welcome, user1</h1>
+          <!--  Row 1 -->
+          <div class="d-flex flex-row align-items-center">
+            <h3
+              class="col-sm-12 col-xl-6 card-title fw-semibold pb-3 pt-3 flex-fill"
+            >
+              Dashboard
+            </h3>
+
+            <div class="button-container" hidden>
+              <div id="cameraToggle" class="custom-control custom-switch mr-4">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="customSwitch1"
+                />
+                <label
+                  id="cameraSwitchIndex"
+                  class="custom-control-label"
+                  for="customSwitch1"
+                  >Camera On</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 d-flex align-items-strech">
+              <div class="card w-100">
+                <div class="card-body">
+                  <div
+                    class="d-sm-flex d-block align-items-center justify-content-between mb-9"
+                  >
+                    <div class="mb-3 mb-sm-0">
+                      <h5 class="card-title fw-semibold">Weekly Overview</h5>
+                    </div>
+                    <!-- <div>
+                      <select class="form-select">
+                        <option value="1">March 2023</option>
+                        <option value="2">April 2023</option>
+                        <option value="3">May 2023</option>
+                        <option value="4">June 2023</option>
+                      </select>
+                    </div> -->
+                  </div>
+                  <div id="chart"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- Yearly Breakup -->
+                  <div class="card overflow-hidden">
+                    <div class="card-body p-4">
+                      <h5 class="card-title mb-5 fw-semibold">
+                        Posture Anaylsis
+                      </h5>
+                      <div class="row align-items-center">
+                        <div class="col-8">
+                          <h4 id="posCount" class="fw-semibold mb-3 mt-2">
+                            0 Counts
+                          </h4>
+
+                          <div class="d-flex align-items-center">
+                            <div>
+                              <div class="me-4">
+                                <span
+                                  class="round-8 bg-primary rounded-circle me-2 d-inline-block"
+                                ></span>
+                                <span class="fs-2">Left/Right</span>
+                              </div>
+                              <div>
+                                <span
+                                  class="round-8 rounded-circle me-2 d-inline-block"
+                                  style="background-color: #49beff"
+                                ></span>
+                                <span class="fs-2">Close</span>
+                              </div>
+                            </div>
+                            <div>
+                              <div>
+                                <span
+                                  class="round-8 rounded-circle me-2 d-inline-block"
+                                  style="background-color: #5eb44b"
+                                ></span>
+                                <span class="fs-2">Leaned</span>
+                              </div>
+                              <div>
+                                <span
+                                  class="round-8 rounded-circle me-2 d-inline-block"
+                                  style="background-color: #b4ccb9"
+                                ></span>
+                                <span class="fs-2">Up/Down</span>
+                              </div>
+                            </div>
+                            <!-- ["#5D87FF", "#ecf2ff", "#F9F9FD", "B4CCB9"] -->
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="d-flex justify-content-center">
+                            <div id="breakup"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <!-- Monthly Earnings -->
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row alig n-items-start">
+                        <div class="col-8">
+                          <h5 class="card-title mb-9 fw-semibold">Use Time</h5>
+                          <h4 id="useTime" class="fw-semibold mb-3">0 min</h4>
+                        </div>
+                        <div class="col-4">
+                          <div class="d-flex justify-content-end">
+                            <div
+                              class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="ti ti-device-desktop fs-6"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="earning"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <h5 class="col-sm-12 col-xl-6 card-title fw-semibold pb-3 pt-3">
+              Recommendations
+            </h5>
+            <h5 class="col-sm-12 col-xl-6 card-title fw-semibold pb-3 pt-3">
+              Posture Tips
+            </h5>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-xl-3">
+              <div class="card overflow-hidden rounded-2">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="card h-100 mb-5" height="auto" id="video">
+                      <!-- <iframe
+                        width="auto"
+                        height="60%"
+                        src="https://www.youtube.com/embed/eznjIHMTi_U"
+                        title="Most relieving neck pain exercise! Cervical Spine Retraction &amp; Extension - Mckenzie Method"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                      ></iframe> -->
+                      <div class="card-body mt-1">
+                        <h5 class="card-title" style="color: black">
+                          Exercise 1
+                        </h5>
+                        <p class="card-text">Back</p>
+                        <!-- <p class="card-text">
+                      The McKenzie method or mechanical diagnosis and
+                      therapy (MDT) is a system of diagnosis and treatment
+                      for spinal and extremity musculoskeletal disorders.
+                    </p> -->
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card overflow-hidden rounded-2">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="card h-100 mb-5" id="video2">
+                      <!-- <iframe
+                      width="auto"
+                      height="60%"
+                      src="https://www.youtube.com/embed/JFuZdcU9L_g"
+                      title="Easy Hip Opener with the Butterfly Stretch with Sea Lark Chiropractic"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe> -->
+
+                      <div class="card-body mt-1">
+                        <h5 class="card-title" style="color: black">
+                          Exercise 2
+                        </h5>
+                        <p class="card-text">Back</p>
+                        <!-- <p class="card-text">
+                    The butterfly stretch is also very helpful for anyone
+                    who is experiencing tight hips or a groin injury.
+                  </p> -->
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-sm-6 col-xl-3">
+              <div class="card overflow-hidden rounded-2">
+                <div class="position-relative">
+                  <a href="javascript:void(0)"
+                    ><img
+                      src="assets/images/products/s7.jpg"
+                      class="card-img-top rounded-0"
+                      alt="..."
+                  /></a>
+                  <a
+                    href="javascript:void(0)"
+                    class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="Add To Cart"
+                    ><i class="ti ti-basket fs-4"></i
+                  ></a>
+                </div>
+                <div class="card-body pt-3 p-4">
+                  <h6 class="fw-semibold fs-4">Red Valvet Dress</h6>
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <h6 class="fw-semibold fs-4 mb-0">
+                      $150
+                      <span class="ms-2 fw-normal text-muted fs-3"
+                        ><del>$200</del></span
+                      >
+                    </h6>
+                    <ul class="list-unstyled d-flex align-items-center mb-0">
+                      <li>
+                        <a class="me-1" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a class="me-1" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a class="me-1" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a class="me-1" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a class="" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card overflow-hidden rounded-2">
+                <div class="position-relative">
+                  <a href="javascript:void(0)"
+                    ><img
+                      src="assets/images/products/s11.jpg"
+                      class="card-img-top rounded-0"
+                      alt="..."
+                  /></a>
+                  <a
+                    href="javascript:void(0)"
+                    class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="Add To Cart"
+                    ><i class="ti ti-basket fs-4"></i
+                  ></a>
+                </div>
+                <div class="card-body pt-3 p-4">
+                  <h6 class="fw-semibold fs-4">Cute Soft Teddybear</h6>
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <h6 class="fw-semibold fs-4 mb-0">
+                      $285
+                      <span class="ms-2 fw-normal text-muted fs-3"
+                        ><del>$345</del></span
+                      >
+                    </h6>
+                    <ul class="list-unstyled d-flex align-items-center mb-0">
+                      <li>
+                        <a class="me-1" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a class="me-1" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a class="me-1" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a class="me-1" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a class="" href="javascript:void(0)"
+                          ><i class="ti ti-star text-warning"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-sm-12 col-xl-6">
+              <div class="card overflow-hidden rounded-2">
+                <h5
+                  id="PostureTitle"
+                  class="text-center text-black font-italic"
+                  style="margin-top: 3rem"
+                >
+                  "Be mindful of your posture"
+                </h5>
+                <p
+                  id="PostureAuthor"
+                  class="text-center font-italic"
+                  style="margin-top: 1.5rem; margin-bottom: 3rem"
+                >
+                  Mayo Clinic - Proper ergonomics for sitting
+                </p>
+                <p
+                  id="PostureDescription"
+                  class="text-center font-italic"
+                  style="color: rgb(84, 82, 82); padding: 2rem"
+                >
+                  Throughout the day, consciously check your posture and make
+                  adjustments if needed. Develop the habit of sitting and
+                  standing tall with your shoulders back and your head aligned
+                  with your spine.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="camera" hidden>
+            <canvas id="canvas" class="canvas" width="5%" height="5%"></canvas>
+            <div id="message"></div>
+          </div>
+          <div class="py-6 px-6 text-center">
+            <p class="mb-0 fs-4">
+              Design and Developed by
+              <a
+                href="https://sit-up.netlify.app/"
+                target="_blank"
+                class="pe-1 text-primary text-decoration-underline"
+                >Sit Up</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="src/js/main.js"></script>
+    <script src="src/js/jeelizFaceTransfer.js"></script>
+    <script src="src/js/posture.js"></script>
+
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/sidebarmenu.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="assets/libs/simplebar/dist/simplebar.js"></script>
+    <script type="module" src="assets/js/dashboard.js"></script>
+  </body>
+</html>
